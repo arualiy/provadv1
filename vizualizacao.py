@@ -10,34 +10,6 @@ st.title('Olympic Medalists Data Visualization')
 # 1. Medals by Country (Bar Graph)
 st.subheader('Medals Won by Country')
 
-# Simulação de um DataFrame para o exemplo (remover isso na sua implementação)
-# import pandas as pd
-# data = pd.DataFrame({
-#    'country_medal': ['USA', 'China', 'Russia', 'Brazil', 'UK']*100
-# })
-
-# Obtendo a contagem de medalhas por país
-medals_by_country = data['country_medal'].value_counts()
-
-# Filtro para o número de países a serem exibidos
-num_paises = st.selectbox('Selecione o número de países para exibir', [10, 20, 30, 40], index=0)
-
-# Exibir os países selecionados pelo filtro
-medals_by_country_filtered = medals_by_country.head(num_paises)
-
-# Criando o gráfico
-fig1, ax1 = plt.subplots()
-medals_by_country_filtered.plot(kind='bar', color='gold', edgecolor='black', ax=ax1)
-ax1.set_title(f'Medals Won by Top {num_paises} Countries')
-ax1.set_xlabel('Country')
-ax1.set_ylabel('Number of Medals')
-ax1.set_xticklabels(ax1.get_xticklabels(), rotation=45)
-
-# Exibindo o gráfico no Streamlit
-st.pyplot(fig1)
-
-
-
 # 3. Age Distribution (Histogram)
 st.subheader('Age Distribution of Medalists')
 fig3, ax3 = plt.subplots()
